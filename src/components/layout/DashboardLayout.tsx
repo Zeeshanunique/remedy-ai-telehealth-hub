@@ -24,16 +24,17 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full">
-        <Sidebar>
+      <div className="min-h-screen flex w-full bg-gradient-to-br from-background to-background/80">
+        <Sidebar className="border-r border-border/40 shadow-lg">
           <SidebarContent>
-            <div className="p-4 border-b">
+            <div className="p-6 border-b">
               <h2 className="font-bold text-xl text-primary flex items-center">
-                <span className="text-2xl mr-2">💊</span> RemedyAI
+                <span className="text-2xl mr-2">💊</span> 
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">RemedyAI</span>
               </h2>
             </div>
             <SidebarGroup>
-              <SidebarGroupLabel>Main Menu</SidebarGroupLabel>
+              <SidebarGroupLabel className="text-sm font-medium">Main Menu</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
                   {menuItems.map((item) => (
@@ -41,11 +42,16 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                       <SidebarMenuButton 
                         onClick={() => navigate(item.path)}
                         className={cn(
-                          "w-full flex items-center gap-3 cursor-pointer",
-                          window.location.pathname === item.path && "bg-accent"
+                          "w-full flex items-center gap-3 cursor-pointer transition-colors duration-200",
+                          window.location.pathname === item.path 
+                            ? "bg-primary/10 text-primary border-l-2 border-primary" 
+                            : "hover:bg-accent/50"
                         )}
                       >
-                        <item.icon className="h-5 w-5" />
+                        <item.icon className={cn(
+                          "h-5 w-5 transition-colors",
+                          window.location.pathname === item.path ? "text-primary" : ""
+                        )} />
                         <span>{item.title}</span>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -53,16 +59,30 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
+            <div className="mt-auto p-4 border-t border-border/40">
+              <div className="text-xs text-muted-foreground">
+                RemedyAI © 2025
+              </div>
+            </div>
           </SidebarContent>
         </Sidebar>
-        <div className="flex-1 p-8">
-          <div className="mb-6 flex items-center justify-between">
-            <SidebarTrigger className="lg:hidden">
-              <Menu className="h-6 w-6" />
-            </SidebarTrigger>
-            <h1 className="text-2xl font-bold lg:ml-0">RemedyAI Telehealth</h1>
-          </div>
-          <main>{children}</main>
+        <div className="flex-1 flex flex-col">
+          <header className="h-16 border-b border-border/40 shadow-sm bg-card/50 backdrop-blur-sm flex items-center justify-between px-6">
+            <div className="flex items-center gap-4">
+              <SidebarTrigger className="lg:hidden">
+                <Menu className="h-5 w-5" />
+              </SidebarTrigger>
+              <h1 className="text-lg font-semibold lg:ml-0">RemedyAI Telehealth</h1>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <User className="size-4" />
+              </div>
+            </div>
+          </header>
+          <main className="flex-1 p-6 md:p-8 overflow-auto">
+            {children}
+          </main>
         </div>
       </div>
     </SidebarProvider>
