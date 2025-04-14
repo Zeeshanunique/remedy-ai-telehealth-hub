@@ -1,6 +1,7 @@
 
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { Calendar, Home, MessageCircle, FileText, User, Video, Brain, Menu } from "lucide-react";
+import { Calendar, Home, MessageCircle, FileText, User, Video, Menu } from "lucide-react";
+import { Brain } from "lucide-react"; // Explicitly import Brain icon
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
