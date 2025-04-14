@@ -1,129 +1,154 @@
 
+import { useState, FormEvent } from "react";
+import DashboardLayout from "../components/layout/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import DashboardLayout from "../components/layout/DashboardLayout";
-import { Send, User, Bot, Wand2 } from "lucide-react";
-import { useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { Send, Bot, User } from "lucide-react";
+import { Avatar } from "@/components/ui/avatar";
+import { Checkbox } from "@/components/ui/checkbox";
+
+// Define type for message roles
+type MessageRole = "system" | "user";
+
+// Define message interface
+interface Message {
+  role: MessageRole;
+  content: string;
+}
 
 const AIAssistantPage = () => {
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([
-    { 
-      role: "system" as const, 
-      content: "Hello! I'm your AI health assistant. I can answer questions about symptoms, medications, and general health concerns. How can I help you today?" 
+  const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [includeRecords, setIncludeRecords] = useState(true);
+  
+  // Use the proper Message type for the messages state
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "system",
+      content: "Hello! I'm your AI health assistant. How can I help you today?"
     }
   ]);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!query.trim() || loading) return;
 
-    // Add user message
-    const userMessage = { role: "user" as const, content: input };
-    setMessages([...messages, userMessage]);
-    setInput("");
+    // Create new user message using the Message type
+    const newUserMessage: Message = {
+      role: "user",
+      content: query
+    };
 
-    // Simulate AI response
+    // Add the user message to the chat
+    setMessages([...messages, newUserMessage]);
+    setLoading(true);
+
+    // Simulate AI response after a short delay
     setTimeout(() => {
-      let response = "";
-      
-      if (input.toLowerCase().includes("headache")) {
-        response = "Headaches can be caused by various factors including stress, dehydration, lack of sleep, or eye strain. For occasional headaches, rest, hydration, and over-the-counter pain relievers may help. If you're experiencing severe, persistent, or unusual headaches, I'd recommend consulting with a healthcare professional.";
-      } else if (input.toLowerCase().includes("cold") || input.toLowerCase().includes("flu")) {
-        response = "Common cold and flu symptoms include fever, cough, sore throat, body aches, and fatigue. Rest, hydration, and over-the-counter medications can help manage symptoms. If you have high fever, difficulty breathing, or symptoms that worsen after 7-10 days, please consult with a doctor.";
-      } else if (input.toLowerCase().includes("sleep")) {
-        response = "Good sleep hygiene includes maintaining a regular sleep schedule, creating a restful environment, limiting screen time before bed, and avoiding caffeine or large meals close to bedtime. If you're experiencing persistent sleep problems, consider consulting with a healthcare provider.";
-      } else {
-        response = "Thank you for sharing that information. While I can provide general health information, I recommend consulting with a healthcare professional for personalized medical advice. Would you like me to help you schedule a consultation with one of our doctors?";
-      }
+      // Create AI response using the Message type
+      const aiResponse: Message = {
+        role: "system",
+        content: generateResponse(query, includeRecords)
+      };
 
-      setMessages(prev => [...prev, { role: "system", content: response }]);
-      scrollToBottom();
-    }, 1000);
+      // Update messages with AI response
+      setMessages(prev => [...prev, aiResponse]);
+      setLoading(false);
+    }, 1500);
+
+    setQuery("");
   };
 
-  const suggestionPrompts = [
-    "What causes headaches?",
-    "How can I treat a common cold?",
-    "Tips for better sleep",
-    "When should I see a doctor about chest pain?"
-  ];
-
-  const handleSuggestionClick = (suggestion: string) => {
-    setInput(suggestion);
+  // Sample response generator function
+  const generateResponse = (userQuery: string, includeHealthRecords: boolean): string => {
+    const query = userQuery.toLowerCase();
+    
+    if (query.includes("headache") || query.includes("head pain")) {
+      return `Based on your symptoms, you might be experiencing a tension headache. ${
+        includeHealthRecords ? "I see from your records that you've reported similar symptoms before." : ""
+      } I recommend rest, staying hydrated, and taking an over-the-counter pain reliever if needed. If symptoms persist for more than 3 days, please consult with your doctor.`;
+    }
+    
+    if (query.includes("cold") || query.includes("flu") || query.includes("fever")) {
+      return `It sounds like you might have a common cold or flu. ${
+        includeHealthRecords ? "Your records show you had a flu vaccination last year." : ""
+      } I recommend plenty of rest, staying hydrated, and over-the-counter medications to manage symptoms. If you develop a high fever or symptoms worsen, please consult your healthcare provider.`;
+    }
+    
+    return `I understand you're asking about "${userQuery}". ${
+      includeHealthRecords ? "I've checked your health records for context. " : ""
+    }While I can provide general information, I recommend consulting with a healthcare professional for personalized medical advice. Would you like me to help you schedule an appointment?`;
   };
 
   return (
     <DashboardLayout>
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold">AI Health Assistant</h1>
-          <p className="text-muted-foreground mt-2">
-            Ask health-related questions and get instant guidance
-          </p>
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold mb-6">AI Health Assistant</h1>
+        
+        <div className="flex items-center space-x-2 mb-4">
+          <Checkbox 
+            id="includeRecords" 
+            checked={includeRecords} 
+            onCheckedChange={(checked) => setIncludeRecords(checked as boolean)} 
+          />
+          <label htmlFor="includeRecords" className="text-sm">
+            Include my health records in responses
+          </label>
         </div>
-
-        <Card className="h-[calc(100vh-16rem)]">
-          <CardContent className="p-6 h-full flex flex-col">
-            <div className="flex-1 overflow-y-auto space-y-4 mb-4">
+        
+        <Card>
+          <CardContent className="p-4">
+            <div className="space-y-4 mb-4 max-h-[400px] overflow-y-auto">
               {messages.map((message, index) => (
                 <div 
                   key={index} 
-                  className={cn(
-                    "flex items-start gap-3 rounded-lg p-4",
-                    message.role === "user" 
-                      ? "ml-auto bg-primary text-primary-foreground max-w-[80%] md:max-w-[60%]" 
-                      : "bg-muted max-w-[80%] md:max-w-[60%]"
-                  )}
+                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  <div className={cn(
-                    "flex items-center justify-center h-8 w-8 rounded-full shrink-0",
-                    message.role === "user" ? "bg-primary-foreground/20" : "bg-primary/20"
-                  )}>
-                    {message.role === "user" ? (
-                      <User className="h-5 w-5" />
-                    ) : (
-                      <Bot className="h-5 w-5" />
-                    )}
+                  <div 
+                    className={`flex items-start space-x-2 max-w-[80%] ${
+                      message.role === "user" ? "flex-row-reverse space-x-reverse" : ""
+                    }`}
+                  >
+                    <Avatar className={message.role === "user" ? "bg-primary" : "bg-muted"}>
+                      {message.role === "user" ? <User className="h-5 w-5" /> : <Bot className="h-5 w-5" />}
+                    </Avatar>
+                    <div 
+                      className={`p-3 rounded-lg ${
+                        message.role === "user" 
+                          ? "bg-primary text-primary-foreground" 
+                          : "bg-muted text-foreground"
+                      }`}
+                    >
+                      {message.content}
+                    </div>
                   </div>
-                  <div className="text-sm">{message.content}</div>
                 </div>
               ))}
-              <div ref={messagesEndRef} />
+              {loading && (
+                <div className="flex justify-start">
+                  <div className="flex items-start space-x-2 max-w-[80%]">
+                    <Avatar className="bg-muted">
+                      <Bot className="h-5 w-5" />
+                    </Avatar>
+                    <div className="p-3 rounded-lg bg-muted">
+                      <span className="inline-block animate-pulse">Thinking...</span>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-
-            {messages.length <= 1 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4">
-                {suggestionPrompts.map((prompt, index) => (
-                  <Button 
-                    key={index} 
-                    variant="outline" 
-                    className="justify-start"
-                    onClick={() => handleSuggestionClick(prompt)}
-                  >
-                    <Wand2 className="h-4 w-4 mr-2" />
-                    {prompt}
-                  </Button>
-                ))}
-              </div>
-            )}
-
-            <form onSubmit={handleSendMessage} className="flex gap-2">
-              <Input 
-                value={input} 
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your health question..."
+            
+            <form onSubmit={handleSubmit} className="flex space-x-2">
+              <Input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Ask me about your health concerns..."
                 className="flex-1"
+                disabled={loading}
               />
-              <Button type="submit" size="icon">
-                <Send className="h-4 w-4" />
+              <Button type="submit" size="icon" disabled={loading}>
+                <Send className="h-5 w-5" />
               </Button>
             </form>
           </CardContent>

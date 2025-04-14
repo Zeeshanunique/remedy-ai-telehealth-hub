@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Calendar, FileText, MessageSquare, Video } from "lucide-react";
+import { ArrowRight, Calendar, FileText, MessageSquare, Video, Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import DashboardLayout from "../components/layout/DashboardLayout";
 
