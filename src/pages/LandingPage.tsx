@@ -131,11 +131,11 @@ const LandingPage = () => {
             <div className="mt-12 md:mt-16 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 h-[20%] bottom-0"></div>
               
-              {/* Single medical SVG */}
-              <div className="max-w-[700px] mx-auto">
+              {/* Enhanced medical SVG */}
+              <div className="rounded-xl shadow-xl border border-border/40 mx-auto overflow-hidden">
                 <img 
                   src="/placeholder.svg" 
-                  alt="RemedyAI Telehealth" 
+                  alt="RemedyAI Telehealth Hub" 
                   className="w-full h-auto"
                 />
               </div>
