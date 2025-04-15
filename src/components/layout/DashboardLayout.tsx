@@ -1,9 +1,13 @@
-
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { Calendar, Home, MessageCircle, FileText, User, Video, Menu } from "lucide-react";
+import { Calendar, Home, MessageCircle, FileText, User, Video, Menu, LogOut, Settings } from "lucide-react";
 import { Brain } from "lucide-react"; // Explicitly import Brain icon
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useAuth, useUser } from "@clerk/clerk-react";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { useToast } from "@/hooks/use-toast";
 
 type DashboardLayoutProps = {
   children: React.ReactNode;
@@ -11,6 +15,9 @@ type DashboardLayoutProps = {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const navigate = useNavigate();
+  const { signOut } = useAuth();
+  const { user, isLoaded } = useUser();
+  const { toast } = useToast();
 
   const menuItems = [
     { title: "Home", icon: Home, path: "/" },
@@ -21,6 +28,34 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     { title: "Appointments", icon: Calendar, path: "/appointments" },
     { title: "Profile", icon: User, path: "/profile" },
   ];
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      // Redirect will happen automatically through ProtectedRoute
+      toast({
+        title: "Signed out",
+        description: "You have been successfully signed out.",
+      });
+    } catch (error) {
+      console.error("Error signing out:", error);
+      toast({
+        title: "Error",
+        description: "There was a problem signing you out. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  // Get user initials for avatar fallback
+  const getUserInitials = () => {
+    if (!isLoaded || !user) return "?";
+    
+    const firstName = user.firstName || "";
+    const lastName = user.lastName || "";
+    
+    return `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase() || user.emailAddresses[0]?.emailAddress?.charAt(0).toUpperCase() || "?";
+  };
 
   return (
     <SidebarProvider>
@@ -74,10 +109,43 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               </SidebarTrigger>
               <h1 className="text-lg font-semibold lg:ml-0">RemedyAI Telehealth</h1>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                <User className="size-4" />
-              </div>
+            <div className="flex items-center">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon" className="rounded-full w-10 h-10 flex items-center justify-center">
+                    <Avatar className="h-8 w-8">
+                      <AvatarImage src={user?.imageUrl} alt="User avatar" />
+                      <AvatarFallback className="bg-primary/10 text-primary text-sm">
+                        {getUserInitials()}
+                      </AvatarFallback>
+                    </Avatar>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="end" forceMount>
+                  <DropdownMenuLabel>
+                    <div className="flex flex-col space-y-1">
+                      <p className="text-sm font-medium">{user?.fullName || "User"}</p>
+                      <p className="text-xs text-muted-foreground truncate">
+                        {user?.primaryEmailAddress?.emailAddress || ""}
+                      </p>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => navigate("/profile")}>
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => navigate("/profile?tab=settings")}>
+                    <Settings className="mr-2 h-4 w-4" />
+                    <span>Settings</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleSignOut}>
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Sign out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </header>
           <main className="flex-1 p-6 md:p-8 overflow-auto">

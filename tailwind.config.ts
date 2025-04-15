@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -107,8 +106,8 @@ export default {
 					}
 				},
 				'pulse-soft': {
-					'0%, 100%': { opacity: 1 },
-					'50%': { opacity: 0.8 }
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
@@ -120,5 +119,8 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/typography"),
+	],
 } satisfies Config;

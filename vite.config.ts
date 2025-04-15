@@ -19,4 +19,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Define environment variable prefixes that should be exposed to the client
+  envPrefix: ['VITE_', 'GOOGLE_API_KEY', 'NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY', 'CLERK_SECRET_KEY'],
 }));

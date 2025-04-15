@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -10,7 +9,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
+import { generateAIResponse } from "@/lib/gemini-ai";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const symptomsSchema = z.object({
   mainSymptom: z.string().min(2, "Please describe your main symptom"),
@@ -27,6 +29,7 @@ const SymptomsPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [showPrediagnosis, setShowPrediagnosis] = useState(false);
   const [diagnosis, setDiagnosis] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<SymptomFormValues>({
     resolver: zodResolver(symptomsSchema),
@@ -39,35 +42,51 @@ const SymptomsPage = () => {
     },
   });
 
-  const onSubmit = (data: SymptomFormValues) => {
+  const onSubmit = async (data: SymptomFormValues) => {
     setSubmitting(true);
+    setError(null);
     
-    // Simulate AI analysis
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      // Format the user's symptom data into a comprehensive prompt
+      const prompt = `
+        Please provide a preliminary analysis of the following symptoms:
+        
+        Main Symptom: ${data.mainSymptom}
+        Duration: ${data.duration}
+        ${data.temperature ? `Body Temperature: ${data.temperature}` : ''}
+        ${data.additionalSymptoms ? `Additional Symptoms: ${data.additionalSymptoms}` : ''}
+        ${data.medications ? `Current Medications: ${data.medications}` : ''}
+        
+        Please provide:
+        1. A possible explanation of what might be causing these symptoms
+        2. General recommendations for managing these symptoms
+        3. Clear indicators of when the patient should seek immediate medical attention
+        
+        Format your response in clear sections with appropriate markdown formatting.
+        Note: Make it very clear that this is NOT a medical diagnosis and the patient should consult a healthcare professional.
+      `;
       
-      // Generate a sample diagnosis based on the main symptom
-      let diagnosisText = "";
-      const symptom = data.mainSymptom.toLowerCase();
+      // Call the Gemini AI model
+      const aiResponse = await generateAIResponse(prompt);
       
-      if (symptom.includes("headache")) {
-        diagnosisText = "Your symptoms suggest a tension headache, which is common and often related to stress or dehydration. Rest, proper hydration, and over-the-counter pain relievers may help. If the headache is severe or persistent, please consult a doctor.";
-      } else if (symptom.includes("cough") || symptom.includes("cold")) {
-        diagnosisText = "Your symptoms are consistent with an upper respiratory infection or common cold. Rest, hydration, and over-the-counter cold medications may help manage symptoms. If you develop fever over 101°F, severe symptoms, or symptoms lasting over 10 days, please consult a healthcare professional.";
-      } else if (symptom.includes("stomach") || symptom.includes("nausea")) {
-        diagnosisText = "Your symptoms suggest gastroenteritis or stomach flu. Rest your stomach, stay hydrated with small sips of clear fluids, and gradually reintroduce bland foods. If symptoms persist beyond 48 hours or include severe pain or dehydration, please seek medical attention.";
-      } else {
-        diagnosisText = "Based on the symptoms you've described, you may be experiencing a common condition that often resolves with rest and self-care. However, for a more accurate diagnosis, we recommend scheduling a consultation with one of our healthcare providers.";
-      }
-      
-      setDiagnosis(diagnosisText);
+      setDiagnosis(aiResponse);
       setShowPrediagnosis(true);
       
       toast({
-        title: "Symptoms Submitted",
+        title: "Symptoms Analyzed",
         description: "Your symptoms have been analyzed by our AI system.",
       });
-    }, 1500);
+    } catch (err) {
+      console.error("Error analyzing symptoms:", err);
+      setError("We encountered an error analyzing your symptoms. Please try again later.");
+      toast({
+        title: "Analysis Failed",
+        description: "There was a problem analyzing your symptoms. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -189,7 +208,13 @@ const SymptomsPage = () => {
                   </div>
                   
                   <div className="bg-muted p-4 rounded-lg">
-                    <p className="text-sm">{diagnosis}</p>
+                    <div className="prose prose-sm dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-foreground prose-h1:text-lg prose-h2:text-base prose-h3:text-sm prose-p:my-1.5 prose-p:leading-relaxed prose-strong:text-foreground prose-strong:font-semibold prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-ul:my-2 prose-ul:list-disc prose-ol:my-2 prose-li:my-0.5">
+                      <ReactMarkdown 
+                        remarkPlugins={[remarkGfm]}
+                      >
+                        {diagnosis}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                   
                   <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg">
