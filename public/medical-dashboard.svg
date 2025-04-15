@@ -1,0 +1,70 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="450" rx="12" fill="#F8FAFC" />
+  
+  <!-- Dashboard header -->
+  <rect x="40" y="30" width="720" height="60" rx="8" fill="#E2E8F0" />
+  <rect x="60" y="45" width="200" height="30" rx="6" fill="#94A3B8" />
+  <circle cx="720" cy="60" r="20" fill="#94A3B8" />
+  
+  <!-- Health metrics cards -->
+  <rect x="40" y="110" width="220" height="100" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+  <rect x="60" y="130" width="80" height="15" rx="4" fill="#818CF8" />
+  <rect x="60" y="155" width="120" height="30" rx="4" fill="#6366F1" />
+  <path d="M200 155 A40 40 0 0 1 190 180" stroke="#4F46E5" stroke-width="3" />
+  
+  <rect x="280" y="110" width="220" height="100" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+  <rect x="300" y="130" width="80" height="15" rx="4" fill="#34D399" />
+  <rect x="300" y="155" width="120" height="30" rx="4" fill="#10B981" />
+  <path d="M440 140 A40 40 0 0 1 450 185" stroke="#059669" stroke-width="3" />
+  
+  <rect x="520" y="110" width="220" height="100" rx="8" fill="#FEF2F2" stroke="#FECACA" stroke-width="1" />
+  <rect x="540" y="130" width="80" height="15" rx="4" fill="#F87171" />
+  <rect x="540" y="155" width="120" height="30" rx="4" fill="#EF4444" />
+  <path d="M680 170 L670 140 L660 180 L650 150 L640 175" stroke="#DC2626" stroke-width="3" />
+  
+  <!-- Health chart -->
+  <rect x="40" y="230" width="460" height="180" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+  <rect x="60" y="250" width="140" height="20" rx="4" fill="#64748B" />
+  
+  <!-- Chart bars -->
+  <rect x="90" y="360" width="30" height="30" rx="2" fill="#7C3AED" />
+  <rect x="140" y="330" width="30" height="60" rx="2" fill="#7C3AED" />
+  <rect x="190" y="310" width="30" height="80" rx="2" fill="#7C3AED" />
+  <rect x="240" y="280" width="30" height="110" rx="2" fill="#7C3AED" />
+  <rect x="290" y="320" width="30" height="70" rx="2" fill="#7C3AED" />
+  <rect x="340" y="300" width="30" height="90" rx="2" fill="#7C3AED" />
+  <rect x="390" y="340" width="30" height="50" rx="2" fill="#7C3AED" />
+  
+  <!-- X-axis -->
+  <line x1="60" y1="390" x2="440" y2="390" stroke="#94A3B8" stroke-width="1" />
+  
+  <!-- Y-axis -->
+  <line x1="60" y1="290" x2="60" y2="390" stroke="#94A3B8" stroke-width="1" />
+  
+  <!-- Appointments section -->
+  <rect x="520" y="230" width="220" height="180" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+  <rect x="540" y="250" width="160" height="20" rx="4" fill="#64748B" />
+  
+  <!-- Appointment 1 -->
+  <circle cx="555" cy="300" r="15" fill="#FDA4AF" />
+  <path d="M550 300 L553 303 L560 296" stroke="white" stroke-width="2" />
+  <rect x="580" y="290" width="140" height="12" rx="2" fill="#FB7185" />
+  <rect x="580" y="310" width="80" height="8" rx="2" fill="#FDA4AF" opacity="0.6" />
+  
+  <!-- Appointment 2 -->
+  <circle cx="555" cy="350" r="15" fill="#67E8F9" />
+  <path d="M550 350 L553 353 L560 346" stroke="white" stroke-width="2" />
+  <rect x="580" y="340" width="140" height="12" rx="2" fill="#06B6D4" />
+  <rect x="580" y="360" width="80" height="8" rx="2" fill="#67E8F9" opacity="0.6" />
+  
+  <!-- Medical Icons -->
+  <path d="M150 185 A30 30 0 1 1 180 155" stroke="#6366F1" stroke-width="2" fill="none" />
+  <path d="M150 175 L170 165 L150 155" stroke="#6366F1" stroke-width="2" fill="none" />
+  
+  <path d="M390 175 A20 20 0 1 1 410 155" stroke="#10B981" stroke-width="2" fill="none" />
+  <path d="M400 145 L400 165 M390 155 L410 155" stroke="#10B981" stroke-width="2" />
+  
+  <path d="M600 165 A15 15 0 1 1 630 165 A15 15 0 1 1 600 165" stroke="#EF4444" stroke-width="2" fill="none" />
+  <path d="M615 155 L615 175 M605 165 L625 165" stroke="#EF4444" stroke-width="2" />
+</svg>

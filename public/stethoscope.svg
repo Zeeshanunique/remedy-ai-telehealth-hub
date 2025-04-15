@@ -1,0 +1,11 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="240" height="240" rx="120" fill="#F0FDFA" />
+  
+  <!-- Stethoscope -->
+  <circle cx="80" cy="160" r="20" fill="#14B8A6" stroke="#0D9488" stroke-width="4" />
+  <circle cx="140" cy="160" r="15" fill="#14B8A6" stroke="#0D9488" stroke-width="4" />
+  <path d="M80 140V100C80 77.9086 97.9086 60 120 60V60C142.091 60 160 77.9086 160 100V140" stroke="#0D9488" stroke-width="6" stroke-linecap="round" />
+  <path d="M160 138C160 127.507 168.507 119 179 119V119C189.493 119 198 127.507 198 138V150C198 160.493 189.493 169 179 169V169C168.507 169 160 160.493 160 150V138Z" fill="#14B8A6" stroke="#0D9488" stroke-width="4" />
+  <path d="M80 160C80 160 90 165 110 165C130 165 140 160 140 160" stroke="#0D9488" stroke-width="4" stroke-linecap="round" />
+</svg>

@@ -16,6 +16,7 @@ import AppointmentsPage from "./pages/AppointmentsPage";
 import ProfilePage from "./pages/ProfilePage";
 import SignInPage from "./pages/auth/SignInPage";
 import SignUpPage from "./pages/auth/SignUpPage";
+import LandingPage from "./pages/LandingPage";
 
 // Import Clerk Authentication
 import { ClerkProvider } from '@clerk/clerk-react';
@@ -50,12 +51,15 @@ const App = () => {
             <Sonner position="top-center" closeButton />
             <BrowserRouter>
               <Routes>
+                {/* Public landing page */}
+                <Route path="/" element={<LandingPage />} />
+                
                 {/* Auth routes */}
                 <Route path="/sign-in/*" element={<SignInPage />} />
                 <Route path="/sign-up/*" element={<SignUpPage />} />
                 
                 {/* Protected routes */}
-                <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+                <Route path="/dashboard" element={<ProtectedRoute><Index /></ProtectedRoute>} />
                 <Route path="/consultations" element={<ProtectedRoute><ConsultationsPage /></ProtectedRoute>} />
                 <Route path="/assistant" element={<ProtectedRoute><AIAssistantPage /></ProtectedRoute>} />
                 <Route path="/symptoms" element={<ProtectedRoute><SymptomsPage /></ProtectedRoute>} />

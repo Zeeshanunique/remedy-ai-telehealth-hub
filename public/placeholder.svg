@@ -1,1 +1,253 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" fill="none"><rect width="1200" height="1200" fill="#EAEAEA" rx="3"/><g opacity=".5"><g opacity=".5"><path fill="#FAFAFA" d="M600.709 736.5c-75.454 0-136.621-61.167-136.621-136.62 0-75.454 61.167-136.621 136.621-136.621 75.453 0 136.62 61.167 136.62 136.621 0 75.453-61.167 136.62-136.62 136.62Z"/><path stroke="#C9C9C9" stroke-width="2.418" d="M600.709 736.5c-75.454 0-136.621-61.167-136.621-136.62 0-75.454 61.167-136.621 136.621-136.621 75.453 0 136.62 61.167 136.62 136.621 0 75.453-61.167 136.62-136.62 136.62Z"/></g><path stroke="url(#a)" stroke-width="2.418" d="M0-1.209h553.581" transform="scale(1 -1) rotate(45 1163.11 91.165)"/><path stroke="url(#b)" stroke-width="2.418" d="M404.846 598.671h391.726"/><path stroke="url(#c)" stroke-width="2.418" d="M599.5 795.742V404.017"/><path stroke="url(#d)" stroke-width="2.418" d="m795.717 796.597-391.441-391.44"/><path fill="#fff" d="M600.709 656.704c-31.384 0-56.825-25.441-56.825-56.824 0-31.384 25.441-56.825 56.825-56.825 31.383 0 56.824 25.441 56.824 56.825 0 31.383-25.441 56.824-56.824 56.824Z"/><g clip-path="url(#e)"><path fill="#666" fill-rule="evenodd" d="M616.426 586.58h-31.434v16.176l3.553-3.554.531-.531h9.068l.074-.074 8.463-8.463h2.565l7.18 7.181V586.58Zm-15.715 14.654 3.698 3.699 1.283 1.282-2.565 2.565-1.282-1.283-5.2-5.199h-6.066l-5.514 5.514-.073.073v2.876a2.418 2.418 0 0 0 2.418 2.418h26.598a2.418 2.418 0 0 0 2.418-2.418v-8.317l-8.463-8.463-7.181 7.181-.071.072Zm-19.347 5.442v4.085a6.045 6.045 0 0 0 6.046 6.045h26.598a6.044 6.044 0 0 0 6.045-6.045v-7.108l1.356-1.355-1.282-1.283-.074-.073v-17.989h-38.689v23.43l-.146.146.146.147Z" clip-rule="evenodd"/></g><path stroke="#C9C9C9" stroke-width="2.418" d="M600.709 656.704c-31.384 0-56.825-25.441-56.825-56.824 0-31.384 25.441-56.825 56.825-56.825 31.383 0 56.824 25.441 56.824 56.825 0 31.383-25.441 56.824-56.824 56.824Z"/></g><defs><linearGradient id="a" x1="554.061" x2="-.48" y1=".083" y2=".087" gradientUnits="userSpaceOnUse"><stop stop-color="#C9C9C9" stop-opacity="0"/><stop offset=".208" stop-color="#C9C9C9"/><stop offset=".792" stop-color="#C9C9C9"/><stop offset="1" stop-color="#C9C9C9" stop-opacity="0"/></linearGradient><linearGradient id="b" x1="796.912" x2="404.507" y1="599.963" y2="599.965" gradientUnits="userSpaceOnUse"><stop stop-color="#C9C9C9" stop-opacity="0"/><stop offset=".208" stop-color="#C9C9C9"/><stop offset=".792" stop-color="#C9C9C9"/><stop offset="1" stop-color="#C9C9C9" stop-opacity="0"/></linearGradient><linearGradient id="c" x1="600.792" x2="600.794" y1="403.677" y2="796.082" gradientUnits="userSpaceOnUse"><stop stop-color="#C9C9C9" stop-opacity="0"/><stop offset=".208" stop-color="#C9C9C9"/><stop offset=".792" stop-color="#C9C9C9"/><stop offset="1" stop-color="#C9C9C9" stop-opacity="0"/></linearGradient><linearGradient id="d" x1="404.85" x2="796.972" y1="403.903" y2="796.02" gradientUnits="userSpaceOnUse"><stop stop-color="#C9C9C9" stop-opacity="0"/><stop offset=".208" stop-color="#C9C9C9"/><stop offset=".792" stop-color="#C9C9C9"/><stop offset="1" stop-color="#C9C9C9" stop-opacity="0"/></linearGradient><clipPath id="e"><path fill="#fff" d="M581.364 580.535h38.689v38.689h-38.689z"/></clipPath></defs></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none" preserveAspectRatio="xMidYMid meet">
+  <!-- Background with Gradient -->
+  <rect width="1600" height="900" rx="12" fill="url(#bgGradient)" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.07">
+    <path d="M0 112.5H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M0 225H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M0 337.5H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M0 450H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M0 562.5H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M0 675H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M0 787.5H1600" stroke="#0284C7" stroke-width="1" />
+    <path d="M200 0V900" stroke="#0284C7" stroke-width="1" />
+    <path d="M400 0V900" stroke="#0284C7" stroke-width="1" />
+    <path d="M600 0V900" stroke="#0284C7" stroke-width="1" />
+    <path d="M800 0V900" stroke="#0284C7" stroke-width="1" />
+    <path d="M1000 0V900" stroke="#0284C7" stroke-width="1" />
+    <path d="M1200 0V900" stroke="#0284C7" stroke-width="1" />
+    <path d="M1400 0V900" stroke="#0284C7" stroke-width="1" />
+  </g>
+  
+  <!-- Main Circle with Glow -->
+  <circle cx="800" cy="450" r="300" fill="url(#circleGradient)" filter="url(#glow)" />
+  <circle cx="800" cy="450" r="300" stroke="#0284C7" stroke-width="2" fill="none" />
+  
+  <!-- Medical Cross -->
+  <g filter="url(#dropShadow)">
+    <rect x="775" y="250" width="50" height="400" rx="10" fill="url(#crossGradient)" />
+    <rect x="600" y="425" width="400" height="50" rx="10" fill="url(#crossGradient)" />
+  </g>
+  
+  <!-- Pulse Lines -->
+  <!-- Main Heartbeat Line -->
+  <path d="M400 500H520L540 420L570 580L600 320L630 500H750" stroke="url(#pulseGradient)" stroke-width="6" stroke-linecap="round" filter="url(#pulseGlow)" />
+  
+  <!-- Secondary Pulse Lines -->
+  <path d="M870 500H990L1010 450L1030 520L1050 430L1070 500H1190" stroke="#EF4444" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round" />
+  <path d="M400 600H520L540 580L560 620L580 570L600 600H720" stroke="#EF4444" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round" />
+  <path d="M880 600H1000L1020 580L1040 620L1060 570L1080 600H1200" stroke="#EF4444" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Stethoscope -->
+  <g transform="translate(150, 40) scale(1.3)">
+    <path d="M850 550C850 500 800 450 750 450C700 450 650 500 650 550V650C650 675 675 700 700 700H800C825 700 850 675 850 650V550Z" stroke="#14B8A6" stroke-width="4" fill="url(#stethoscopeGradient)" filter="url(#innerGlow)" />
+    <circle cx="800" cy="650" r="15" fill="#14B8A6" />
+    <path d="M750 450V400C750 350 700 300 600 300" stroke="#14B8A6" stroke-width="5" stroke-linecap="round" />
+  </g>
+  
+  <!-- Circular Data Visualization -->
+  <circle cx="800" cy="450" r="280" stroke="#94A3B8" stroke-width="1" stroke-dasharray="8 4" fill="none" />
+  <circle cx="800" cy="450" r="230" stroke="#94A3B8" stroke-width="1" stroke-dasharray="8 4" fill="none" />
+  <circle cx="800" cy="450" r="180" stroke="#94A3B8" stroke-width="1" stroke-dasharray="8 4" fill="none" />
+  <circle cx="800" cy="450" r="130" stroke="#94A3B8" stroke-width="1" stroke-dasharray="8 4" fill="none" />
+  
+  <!-- Animated Data Points -->
+  <circle cx="800" cy="170" r="10" fill="#0EA5E9" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1080" cy="450" r="10" fill="#0EA5E9" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="0.5s" />
+  </circle>
+  <circle cx="800" cy="730" r="10" fill="#0EA5E9" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="1s" />
+  </circle>
+  <circle cx="520" cy="450" r="10" fill="#0EA5E9" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="1.5s" />
+  </circle>
+  
+  <circle cx="917" cy="246" r="8" fill="#14B8A6" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="0.2s" />
+  </circle>
+  <circle cx="1003" cy="567" r="8" fill="#14B8A6" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="0.7s" />
+  </circle>
+  <circle cx="683" cy="654" r="8" fill="#14B8A6" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="1.2s" />
+  </circle>
+  <circle cx="596" cy="333" r="8" fill="#14B8A6" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" begin="1.7s" />
+  </circle>
+  
+  <!-- Dashed Connection Lines -->
+  <path d="M800 170L917 246" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M917 246L1080 450" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M1080 450L1003 567" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M1003 567L800 730" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M800 730L683 654" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M683 654L520 450" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M520 450L596 333" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  <path d="M596 333L800 170" stroke="#0EA5E9" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+  
+  <!-- DNA Helix - Left Side -->
+  <g transform="translate(-60, 0) scale(0.9)">
+    <path d="M340 250C380 290 420 310 460 300C500 290 540 250 580 300C620 350 660 350 700 300" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.6" />
+    <path d="M340 300C380 250 420 210 460 250C500 290 540 330 580 290C620 250 660 250 700 290" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.6" />
+    
+    <path d="M340 350C380 390 420 410 460 400C500 390 540 350 580 400C620 450 660 450 700 400" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.5" />
+    <path d="M340 400C380 350 420 310 460 350C500 390 540 430 580 390C620 350 660 350 700 390" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.5" />
+    
+    <path d="M340 450C380 490 420 510 460 500C500 490 540 450 580 500C620 550 660 550 700 500" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.4" />
+    <path d="M340 500C380 450 420 410 460 450C500 490 540 530 580 490C620 450 660 450 700 490" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.4" />
+    
+    <path d="M340 550C380 590 420 610 460 600C500 590 540 550 580 600C620 650 660 650 700 600" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.3" />
+    <path d="M340 600C380 550 420 510 460 550C500 590 540 630 580 590C620 550 660 550 700 590" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.3" />
+    
+    <!-- DNA Connectors -->
+    <line x1="380" y1="270" x2="380" y2="280" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="300" x2="460" y2="250" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="270" x2="540" y2="310" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="320" x2="620" y2="280" stroke="#0EA5E9" stroke-width="2" />
+    
+    <line x1="380" y1="370" x2="380" y2="380" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="400" x2="460" y2="350" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="370" x2="540" y2="410" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="420" x2="620" y2="380" stroke="#0EA5E9" stroke-width="2" />
+    
+    <line x1="380" y1="470" x2="380" y2="480" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="500" x2="460" y2="450" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="470" x2="540" y2="510" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="520" x2="620" y2="480" stroke="#0EA5E9" stroke-width="2" />
+    
+    <line x1="380" y1="570" x2="380" y2="580" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="600" x2="460" y2="550" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="570" x2="540" y2="610" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="620" x2="620" y2="580" stroke="#0EA5E9" stroke-width="2" />
+  </g>
+  
+  <!-- DNA Helix - Right Side -->
+  <g transform="translate(860, 0) scale(0.9)">
+    <path d="M340 250C380 290 420 310 460 300C500 290 540 250 580 300C620 350 660 350 700 300" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.6" />
+    <path d="M340 300C380 250 420 210 460 250C500 290 540 330 580 290C620 250 660 250 700 290" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.6" />
+    
+    <path d="M340 350C380 390 420 410 460 400C500 390 540 350 580 400C620 450 660 450 700 400" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.5" />
+    <path d="M340 400C380 350 420 310 460 350C500 390 540 430 580 390C620 350 660 350 700 390" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.5" />
+    
+    <path d="M340 450C380 490 420 510 460 500C500 490 540 450 580 500C620 550 660 550 700 500" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.4" />
+    <path d="M340 500C380 450 420 410 460 450C500 490 540 530 580 490C620 450 660 450 700 490" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.4" />
+    
+    <path d="M340 550C380 590 420 610 460 600C500 590 540 550 580 600C620 650 660 650 700 600" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.3" />
+    <path d="M340 600C380 550 420 510 460 550C500 590 540 630 580 590C620 550 660 550 700 590" stroke="#0EA5E9" stroke-width="3" fill="none" stroke-opacity="0.3" />
+    
+    <!-- DNA Connectors -->
+    <line x1="380" y1="270" x2="380" y2="280" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="300" x2="460" y2="250" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="270" x2="540" y2="310" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="320" x2="620" y2="280" stroke="#0EA5E9" stroke-width="2" />
+    
+    <line x1="380" y1="370" x2="380" y2="380" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="400" x2="460" y2="350" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="370" x2="540" y2="410" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="420" x2="620" y2="380" stroke="#0EA5E9" stroke-width="2" />
+    
+    <line x1="380" y1="470" x2="380" y2="480" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="500" x2="460" y2="450" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="470" x2="540" y2="510" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="520" x2="620" y2="480" stroke="#0EA5E9" stroke-width="2" />
+    
+    <line x1="380" y1="570" x2="380" y2="580" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="460" y1="600" x2="460" y2="550" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="540" y1="570" x2="540" y2="610" stroke="#0EA5E9" stroke-width="2" />
+    <line x1="620" y1="620" x2="620" y2="580" stroke="#0EA5E9" stroke-width="2" />
+  </g>
+
+  <!-- Medical Pills Near Bottom -->
+  <g transform="translate(650, 750)">
+    <rect x="0" y="0" width="100" height="40" rx="20" stroke="#0EA5E9" stroke-width="2" fill="white" filter="url(#pillShadow)" />
+    <path d="M50 0V40" stroke="#0EA5E9" stroke-width="2" />
+  </g>
+  
+  <g transform="translate(790, 750)">
+    <rect x="0" y="0" width="160" height="40" rx="20" stroke="#14B8A6" stroke-width="2" fill="white" filter="url(#pillShadow)" />
+    <path d="M80 0V40" stroke="#14B8A6" stroke-width="2" />
+    <path d="M40 0V40" stroke="#14B8A6" stroke-width="2" />
+    <path d="M120 0V40" stroke="#14B8A6" stroke-width="2" />
+  </g>
+  
+  <!-- RemedyAI Logo and Text -->
+  <g transform="translate(800, 830)" text-anchor="middle">
+    <path d="M-100 0H100" stroke="url(#textGradient)" stroke-width="4" stroke-linecap="round" />
+    <text x="0" y="50" font-family="Arial" font-size="32" font-weight="bold" fill="#0F172A">
+      RemedyAI Telehealth
+    </text>
+  </g>
+  
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F0F9FF" />
+    </linearGradient>
+    
+    <!-- Circle Gradient -->
+    <radialGradient id="circleGradient" cx="800" cy="450" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#DBEAFE" />
+    </radialGradient>
+    
+    <!-- Cross Gradient -->
+    <linearGradient id="crossGradient" x1="800" y1="250" x2="800" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    
+    <!-- Pulse Gradient -->
+    <linearGradient id="pulseGradient" x1="400" y1="500" x2="750" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F87171" />
+      <stop offset="50%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    
+    <!-- Stethoscope Gradient -->
+    <linearGradient id="stethoscopeGradient" x1="650" y1="450" x2="850" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.8" />
+    </linearGradient>
+    
+    <!-- Text Gradient -->
+    <linearGradient id="textGradient" x1="-100" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0" />
+      <stop offset="50%" stop-color="#0EA5E9" />
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0" />
+    </linearGradient>
+    
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Inner Glow for Stethoscope -->
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Pulse Glow -->
+    <filter id="pulseGlow" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Drop Shadow -->
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.15" />
+    </filter>
+    
+    <!-- Pill Shadow -->
+    <filter id="pillShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.1" />
+    </filter>
+  </defs>
+</svg>
